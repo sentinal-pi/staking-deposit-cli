@@ -16,6 +16,7 @@ PRATER = 'prater'
 SEPOLIA = 'sepolia'
 ZHEJIANG = 'zhejiang'
 HOLESKY = 'holesky'
+FINX_MAINET = 'finx-mainnet'
 
 # Mainnet setting
 MainnetSetting = BaseChainSetting(
@@ -37,7 +38,10 @@ ZhejiangSetting = BaseChainSetting(
 HoleskySetting = BaseChainSetting(
     NETWORK_NAME=HOLESKY, GENESIS_FORK_VERSION=bytes.fromhex('01017000'),
     GENESIS_VALIDATORS_ROOT=bytes.fromhex('9143aa7c615a7f7115e2b6aac319c03529df8242ae705fba9df39b79c59fa8b1'))
-
+# FINX setting
+FinxMainnetSetting = BaseChainSetting(
+    NETWORK_NAME=HOLESKY, GENESIS_FORK_VERSION=bytes.fromhex('00000072'),
+    GENESIS_VALIDATORS_ROOT=bytes.fromhex('751ad74e22e6d61ee9ad89445b7f8936df893d4e48d633c58ba62f30d83cf1e7'))
 
 ALL_CHAINS: Dict[str, BaseChainSetting] = {
     MAINNET: MainnetSetting,
@@ -46,6 +50,7 @@ ALL_CHAINS: Dict[str, BaseChainSetting] = {
     SEPOLIA: SepoliaSetting,
     ZHEJIANG: ZhejiangSetting,
     HOLESKY: HoleskySetting,
+    FINX_MAINET: FinxMainnetSetting
 }
 
 
